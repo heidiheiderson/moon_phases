@@ -1,31 +1,47 @@
-/**
- *write a  drawTarget() function makes it easy to draw many distinct 
- *targets. Each call to drawTarget() should specify the position, size, and number of
- *rings for each target.
-*/
+let cat;
+let pizza;
+var angle;
+var PizzaRotationTime = 1000;
 
 
-function setup() {
-  createCanvas(720, 400);
-  background(51);
-  noStroke();
-  noLoop();
-}
 
-function draw(){
-	//let size =1;
-	drawTarget(width/10);
+function preload() {
+  cat = loadImage('cat_moon.jpeg');
+  pizza = loadImage('pizza.png')
 }
 
 
-function drawTarget(size){
 
-  //this code draws one target with 8 rings
-  let steps = size/8;
-  let grayvalues = 255/8;
+
+function setup() { 
+  createCanvas(400, 400);
   
-  for (i = 0; i < 8; i++) {
-    fill(i*grayvalues);
-    ellipse(width/2, height/2, size - i*steps, size - i*steps);
-  }
+} 
+
+function draw() { 
+  background(0);
+
+
+  fill(255, 255, 255);
+  stroke(255, 255, 255);
+
+  imageMode(CENTER);
+  image(cat, width/2, height/2, 200, 200);
+
+
+  image(pizza, 400-frameCount, width/2, 200, 200);
+ 
+
+  
+  //translate(0, 0, 400, 400)
+  // ellipse(200, 200, 200, 200);
+ 
+  // noStroke()
+  // fill(0)
+  // ellipse(400-frameCount, 200, 200, 200);
+  
 }
+
+//next steps: make this code my own
+// work on centering the cat, maybe using translate
+//using a donut image as eclipse 
