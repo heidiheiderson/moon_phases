@@ -1,22 +1,23 @@
 let cat;
 let pizza;
-var angle;
-var PizzaRotationTime = 1000;
-
-
+let xLoc;
 
 function preload() {
   cat = loadImage('cat_moon.jpeg');
   pizza = loadImage('pizza.png')
 }
 
-
-
-
 function setup() { 
   createCanvas(400, 400);
   
 } 
+
+function drawEclipse(moonPhase){
+  xLoc = map(moonPhase, 0, 30, 0, 400);
+  image(pizza, xLoc, height/2, 200, 200);
+  print(moonPhase);
+  //print(mouseX);
+}
 
 function draw() { 
   background(0);
@@ -27,10 +28,14 @@ function draw() {
 
   imageMode(CENTER);
   image(cat, width/2, height/2, 200, 200);
+  drawEclipse(0);
+  
+
+ }
 
 
-  image(pizza, 400-frameCount, width/2, 200, 200);
- 
+
+
 
   
   //translate(0, 0, 400, 400)
@@ -40,8 +45,4 @@ function draw() {
   // fill(0)
   // ellipse(400-frameCount, 200, 200, 200);
   
-}
-
-//next steps: make this code my own
-// work on centering the cat, maybe using translate
-//using a donut image as eclipse 
+//make my own function that incorporates a phase structure 0-30
