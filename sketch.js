@@ -22,7 +22,7 @@ function drawEclipse(moonPhase){
 
 function draw() { 
   background(0);
-  frameRate(1);
+  frameRate(10);
 
 
   moonPhase++;
