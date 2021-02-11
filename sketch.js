@@ -1,6 +1,6 @@
 let cat;
 let pizza;
-let xLoc;
+let moonPhase = 0;
 
 function preload() {
   cat = loadImage('cat_moon.jpeg');
@@ -15,23 +15,25 @@ function setup() {
 function drawEclipse(moonPhase){
   xLoc = map(moonPhase, 0, 30, 0, 400);
   image(pizza, xLoc, height/2, 200, 200);
+
   print(moonPhase);
   //print(mouseX);
 }
 
 function draw() { 
   background(0);
+  frameRate(1);
 
 
-  fill(255, 255, 255);
-  stroke(255, 255, 255);
+  moonPhase++;
+  if (moonPhase > 30){
+    moonPhase=0;
+    }
 
   imageMode(CENTER);
   image(cat, width/2, height/2, 200, 200);
-  drawEclipse(0);
-  
-
- }
+  drawEclipse(moonPhase);
+}
 
 
 
