@@ -8,6 +8,8 @@ function preload() {
 }
 
 function setup() { 
+  background(0);
+
   createCanvas(400, 400);
   
 } 
@@ -21,10 +23,28 @@ function drawEclipse(moonPhase){
 }
 
 function draw() { 
-  background(0);
+  
+
+    background(0); 
+  fill(0, 50);
+  rect(0, 0, width, height);
+  fill(random(255), random(255), random(255));
+  ellipse(random(width), random(height), 5, 5);
+  ellipse(random(width), random(height), 3, 3);
+  ellipse(random(width), random(height), 2,2);
+  ellipse(random(width), random(height), 3, 3);
+  ellipse(random(width), random(height), 2,2);
+  ellipse(random(width), random(height), 5, 5);
+  ellipse(random(width), random(height), 3, 3);
+  ellipse(random(width), random(height), 2,2);
+  ellipse(random(width), random(height), 3, 3);
+  ellipse(random(width), random(height), 2,2);
+  ellipse(random(width), random(height), 5, 5);
+  ellipse(random(width), random(height), 3, 3);
+  ellipse(random(width), random(height), 2,2);
+  ellipse(random(width), random(height), 3, 3);
+  ellipse(random(width), random(height), 2,2);
   frameRate(10);
-
-
   moonPhase++;
   if (moonPhase > 30){
     moonPhase=0;
